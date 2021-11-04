@@ -1,3 +1,9 @@
+/*
+Implement a program that recovers JPEGs from a forensic image, per the below.
+
+$ ./recover card.raw
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -34,7 +40,7 @@ int main(int argc, char *argv[])
                 foundfirstJPG = true;
             }
             char filename[8];
-            sprintf(filename, "%03i.jpg", fileCounter);
+            sprintf(filename, "%03i.jpg", fileCounter);  //"sprintf" from cs50.h
             fileCounter += 1;
             newJPGPtr = fopen(filename, "w");
             if(newJPGPtr == NULL)
